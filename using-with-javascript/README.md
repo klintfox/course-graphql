@@ -45,13 +45,13 @@
         ]
     }
     ```
-- Instalar Babel con Node
+- Instalar módulo Babel con Node
     ```
     npm install --save-dev @babel/node
     ```
-- Modificar scripts del archivo package.json para definir los comandos de build y start
+- Agregamos los comandos de build y start en el archivo package.json
     ```
-    scripts": {
+    "scripts": {
         "build": "babel src -d dist --source-maps",
         "start": "babel-node src/index.js"
     }
@@ -74,14 +74,35 @@
     ```
     node dist/index.js
     ```
-- Instalar Nodemon el cual sirve para reiniciar el servidor cada vez que se realiza un cambio
+- Instalar módulo Nodemon el cual  es una herramienta que sirve para reiniciar el servidor cada vez que se realiza un cambio
     ```
     npm install --save-dev nodemon
     ```
-
-
-
-
+- Agregamos el comando serve  en el archivo package.json para incluir configuracion nodemon
+    ```
+    "scripts": {
+        "build": "babel src -d dist --source-maps",
+        "start": "nodemon src/index.js --exec babel-node",
+        "serve": "node dist/index.js"
+    }
+    ```
+- Instalar módulo RimRaf el cual sirve para eliminar carpetas
+    ```
+    npm i rimraf
+    ```
+- Agregar un comando "clean" en package.json
+    ```
+    "scripts": {
+        "build": "babel src -d dist --source-maps",
+        "start": "nodemon src/index.js --exec babel-node",
+        "serve": "node dist/index.js",
+        "clean": "rimraf dist"
+    }
+    ```
+- Si se quiere eliminar la carpeta dist ejecutar el siguiente comando
+    ```
+    npm run clean
+    ```
 
 <!-- - Instalar graphql para javascript
     ```
