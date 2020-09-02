@@ -7,6 +7,7 @@
 - https://babeljs.io/docs/en/usage
 - https://www.npmjs.com/package/@babel/node
 - https://www.npmjs.com/package/nodemon
+- https://graphql.org/graphql-js/running-an-express-graphql-server/
 ## Steps:
 
 ### Software
@@ -103,9 +104,36 @@
     ```
     npm run clean
     ```
-
-<!-- - Instalar graphql para javascript
+- Instalar graphql
     ```
-    npm install graphql
-    npm install express express-graphql graphql
-    ``` -->
+    npm i graphql  express-graphql graphql-tools
+    ```
+- Ejemplo de Express GraphQL Server, para iniciar ejecitar el comando "npm start"
+    ```
+    var express = require('express');
+    var { graphqlHTTP } = require('express-graphql');
+    var { buildSchema } = require('graphql');
+
+    // Construct a schema, using GraphQL schema language
+    var schema = buildSchema(`
+    type Query {
+        hello: String
+    }
+    `);
+
+    // The root provides a resolver function for each API endpoint
+    var root = {
+    hello: () => {
+        return 'Hello world!';
+    },
+    };
+
+    var app = express();
+    app.use('/graphql', graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: true,
+    }));
+    app.listen(4000);
+    console.log('Running a GraphQL API server at http://localhost:4000/graphql');
+    ```
