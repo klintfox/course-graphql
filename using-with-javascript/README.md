@@ -8,6 +8,7 @@
 - https://www.npmjs.com/package/@babel/node
 - https://www.npmjs.com/package/nodemon
 - https://graphql.org/graphql-js/running-an-express-graphql-server/
+- https://graphql.org/graphql-js/basic-types/
 ## Steps:
 
 ### Software
@@ -106,7 +107,7 @@
     ```
 - Instalar graphql
     ```
-    npm i graphql  express-graphql graphql-tools
+    npm i graphql express-graphql graphql-tools --save
     ```
 - Ejemplo de Express GraphQL Server, para iniciar ejecitar el comando "npm start"
     ```
@@ -136,4 +137,9 @@
     }));
     app.listen(3000, () => console.log("Server on port 3000"));
     graphql');
+    ```
+
+- Instalar Moongose
+    ```
+    npm install mongoose
     ```

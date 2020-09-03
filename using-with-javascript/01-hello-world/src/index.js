@@ -1,9 +1,10 @@
-import express from "express";
-// import graphqlHTTP from "express-graphql";
+var express = require('express');
 var { graphqlHTTP } = require('express-graphql');
-var { buildSchema } = require('graphql');
+import schema from "./schema"
+import { connect } from "./database"
 
 const app = express();
+connect();
 
 app.get('/', (req, res) => {
     res.json({
@@ -11,22 +12,13 @@ app.get('/', (req, res) => {
     })
 });
 
-const schema = buildSchema(`
-    type Query {
-    hello: String
-    }
-`);
-
-var root = {
-    hello: () => {
-        return 'Hello world!';
-    },
-};
-
 app.use('/graphql', graphqlHTTP({
     schema: schema,
     graphiql: true,
-    rootValue: root
+    context: {
+        messageId: 'test'
+    }
+    // rootValue: root
 }));
 
 app.listen(3000, () => console.log("Server on port 3000"));
