@@ -1,4 +1,4 @@
-# GraphQL with Nodejs
+# Crud GraphQL con MongoDB
 
 ### Enlaces:
 
