@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export async function connect() {
     try {
-        await mongoose.connect('mongodb://0.0.0.0:27017/graphql', {
+        await mongoose.connect('mongodb://0.0.0.0/graphql', {
             useNewUrlParser: true
                 // useUnifiedTopology: true
         })
