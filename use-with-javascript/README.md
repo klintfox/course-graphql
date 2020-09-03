@@ -1,6 +1,6 @@
 # GraphQL with Nodejs
 
-### Links:
+### Enlaces:
 
 - https://graphql.org/
 - https://www.apollographql.com/
@@ -9,14 +9,17 @@
 - https://www.npmjs.com/package/nodemon
 - https://graphql.org/graphql-js/running-an-express-graphql-server/
 - https://graphql.org/graphql-js/basic-types/
-## Steps:
 
-### Software
+## Primeros Pasos:
+### Herramientas
 - Nodejs
+- GraphQL
+- Babel
+- MongoDb
+- Docker
 - Visual Studio Code
-- 
 
-### 1 Instalación 
+### Instalación 
 - Iniciar proyecto nodejs
     ```
     npm init -y
@@ -143,3 +146,6 @@
     ```
     npm install mongoose
     ```
+### Complementos
+- Como instalar mongodb en docker utilizando docker.compose
+https://github.com/klintfox/docker-images/tree/master/mongo#mongodb-en-docker
