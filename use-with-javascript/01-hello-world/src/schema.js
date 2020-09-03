@@ -6,6 +6,7 @@ type Query {
     hello: String
     greet(name: String): String
     tasks: [Task]
+    Users: [User]
 }
 
 type Task {
@@ -25,6 +26,8 @@ type User {
 type Mutation {
     createTask(input: TaskInput): Task
     createUser(input: UserInput): User
+    deleteUser(_id: ID): User
+    updateUser(_id:ID, input:UserInput): User
 }
 
 input TaskInput{
